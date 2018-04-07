@@ -45,26 +45,13 @@ public class CreateTaskActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
 
-        String current_id = user.getUid();
-
         mUserDatabase = FirebaseDatabase.getInstance().getReference();
-
-//
-//        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("tasks").child(current_id);
-//
-//        mUserdDatabase = FirebaseDatabase.getInstance().getReference().child("users");
-
         mUserdDatabase = FirebaseDatabase.getInstance().getReference().child("users");
 
     }
 
     public void createTask(View view) {
-//        final HashMap<String, String> taskMap = new HashMap<>();
-//        // String ss=memberEmail.getText().toString();
-//        taskMap.put("email", memberEmail.getText().toString());
-//        taskMap.put("daskdeadline", deadlinetask.getText().toString());
-//        taskMap.put("taskdescription", taskdescription.getText().toString());
-//        taskMap.put("taskname", tasksname.getText().toString());
+
 
         final String mMemberEmail =memberEmail.getText().toString();
         final String mTasksName =tasksname.getText().toString();
@@ -94,9 +81,7 @@ public class CreateTaskActivity extends AppCompatActivity {
                     final String current_id = user.getUid();
 
 
-                 //   mUserDatabase = FirebaseDatabase.getInstance().getReference().child("tasks").child(current_id).child(id);
 
-                  //  WriteNewTask(current_id,id,mMemberEmail,mTasksName,mTaskDsc,mTaskDeadline);
 
                     final Tasks tasks=new Tasks(mMemberEmail,mTasksName,mTaskDsc,mTaskDeadline);
 

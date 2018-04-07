@@ -8,7 +8,7 @@
 
 
     <EditText
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="15dp"
         android:id="@+id/LoginUserEmailid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,10 +57,10 @@
         />
 
     <Button
-
+        android:id="@+id/assign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create Account"
+        android:text="Create TASK"
         android:layout_below="@+id/create"
         android:layout_centerVertical="true"
         android:layout_centerInParent="true"
@@ -69,7 +69,15 @@
         />
 
 
-
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TasksList"
+        android:layout_below="@+id/assign"
+        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:onClick="Alltasks"
+        />
 
 </RelativeLayout>

@@ -12,6 +12,9 @@ public class Tasks {
     private String mTaskDeadline;
 
 
+    public Tasks() {
+    }
+
     public Tasks(String mMemberEmail, String mTaskname, String mTaskDsc, String mTaskDeadline) {
         this.mMemberEmail = mMemberEmail;
         this.mTaskname = mTaskname;

@@ -113,6 +113,16 @@ Toast.makeText(MainActivity.this,"sss",Toast.LENGTH_SHORT).show();
 
     }
 
+
+    public void Alltasks(View view){
+
+
+        Intent intent=new Intent(this,TasksListActivity.class);
+        startActivity(intent);
+
+
+    }
+
     public void createaccount(View view){
 
         Intent intent=new Intent(this,RegisterActivity.class);
