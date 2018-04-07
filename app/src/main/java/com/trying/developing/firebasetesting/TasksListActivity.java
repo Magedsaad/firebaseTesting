@@ -59,14 +59,14 @@ public class TasksListActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         final String currentid=currentUser.getUid();
 
-        DBR=FDB.getReference("tasks");
+        DBR=FDB.getReference("tasks").child(currentid);
 
         DBR.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Tasks data=dataSnapshot.getValue(Tasks.class);
-                String tas=dataSnapshot.child("mTaskname").getValue().toString();
-                Toast.makeText(getApplicationContext(),tas,Toast.LENGTH_SHORT).show();
+
+                //Toast.makeText(getApplicationContext(),tas,Toast.LENGTH_SHORT).show();
                 tasksList.add(data);
                 recyclerView.setAdapter(adapter);
             }
@@ -121,6 +121,7 @@ public class TasksListActivity extends AppCompatActivity {
 
             Tasks tasks=data.get(position);
             holder.taskName.setText(tasks.getmTaskname());
+            //Toast.makeText(getApplication(),tasks.getmTaskname(),Toast.LENGTH_SHORT).show();
            // Toast.makeText(getApplicationContext(),holder.taskName.getText(),Toast.LENGTH_SHORT).show();
 
 
