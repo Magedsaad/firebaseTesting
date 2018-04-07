@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,6 +69,7 @@ public class TasksListActivity extends AppCompatActivity {
 
                 //Toast.makeText(getApplicationContext(),tas,Toast.LENGTH_SHORT).show();
                 tasksList.add(data);
+                adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
             }
 
@@ -120,7 +122,9 @@ public class TasksListActivity extends AppCompatActivity {
         public void onBindViewHolder(TaskAdapter.TaskViewHolder holder, int position) {
 
             Tasks tasks=data.get(position);
+
             holder.taskName.setText(tasks.getmTaskname());
+            Toast.makeText(getApplicationContext(),tasks.getmTaskname(),Toast.LENGTH_SHORT).show();
             //Toast.makeText(getApplication(),tasks.getmTaskname(),Toast.LENGTH_SHORT).show();
            // Toast.makeText(getApplicationContext(),holder.taskName.getText(),Toast.LENGTH_SHORT).show();
 
