@@ -6,51 +6,31 @@ package com.trying.developing.firebasetesting;
 
 public class Tasks {
 
-    private String mMemberEmail;
-    private String mTaskname;
-    private String mTaskDsc;
-    private String mTaskDeadline;
+    private String id;
+    private String memberEmail;
+    private String taskName;
+    private String taskDsc;
+    private String taskDeadline;
 
+    public Tasks() {}
 
-    public Tasks() {
+    public Tasks(String id, String memberEmail, String taskName, String taskDsc, String taskDeadline) {
+        this.id = id;
+        this.memberEmail = memberEmail;
+        this.taskName = taskName;
+        this.taskDsc = taskDsc;
+        this.taskDeadline = taskDeadline;
     }
 
-    public Tasks(String mMemberEmail, String mTaskname, String mTaskDsc, String mTaskDeadline) {
-        this.mMemberEmail = mMemberEmail;
-        this.mTaskname = mTaskname;
-        this.mTaskDsc = mTaskDsc;
-        this.mTaskDeadline = mTaskDeadline;
-    }
+    public String getMemberEmail() {return memberEmail;}
 
-    public String getmMemberEmail() {
-        return mMemberEmail;
-    }
+    public String getTaskName() {return taskName;}
 
-    public void setmMemberEmail(String mMemberEmail) {
-        this.mMemberEmail = mMemberEmail;
-    }
+    public String getTaskDsc() {return taskDsc;}
 
-    public String getmTaskname() {
-        return mTaskname;
-    }
+    public String getTaskDeadline() {return taskDeadline;}
 
-    public void setmTaskname(String mTaskname) {
-        this.mTaskname = mTaskname;
-    }
-
-    public String getmTaskDsc() {
-        return mTaskDsc;
-    }
-
-    public void setmTaskDsc(String mTaskDsc) {
-        this.mTaskDsc = mTaskDsc;
-    }
-
-    public String getmTaskDeadline() {
-        return mTaskDeadline;
-    }
-
-    public void setmTaskDeadline(String mTaskDeadline) {
-        this.mTaskDeadline = mTaskDeadline;
+    public String getId() {
+        return id;
     }
 }

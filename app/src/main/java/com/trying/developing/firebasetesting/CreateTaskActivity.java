@@ -83,9 +83,9 @@ public class CreateTaskActivity extends AppCompatActivity {
 
 
 
-                    final Tasks tasks=new Tasks(mMemberEmail,mTasksName,mTaskDsc,mTaskDeadline);
+                    final Tasks tasks=new Tasks(id,mMemberEmail,mTasksName,mTaskDsc,mTaskDeadline);
 
-                    mUserDatabase.child("tasks").child(current_id).child(id).push().setValue(tasks).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    mUserDatabase.child("tasks1").child(current_id).push().setValue(tasks).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
 
@@ -94,11 +94,11 @@ public class CreateTaskActivity extends AppCompatActivity {
 
                             String current_id = user.getUid();
 
-                            Tasks tasks=new Tasks(mMemberEmail,mTasksName,mTaskDsc,mTaskDeadline);
+                            Tasks tasks=new Tasks(id,mMemberEmail,mTasksName,mTaskDsc,mTaskDeadline);
 
                             String id = child.getKey();
 
-                            mUserDatabase.child("tasks").child(id).child(current_id).push().setValue(tasks);
+                            mUserDatabase.child("tasks1").child(id).push().setValue(tasks);
 
                         }
                     });
