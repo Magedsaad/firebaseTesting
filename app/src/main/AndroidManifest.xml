@@ -20,6 +20,7 @@
         <activity android:name=".CreateTaskActivity" />
         <activity android:name=".TaskDetailsActivity" />
         <activity android:name=".TasksListActivity"></activity>
+
     </application>
 
 </manifest>
