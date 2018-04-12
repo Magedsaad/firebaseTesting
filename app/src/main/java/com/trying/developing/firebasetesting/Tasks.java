@@ -1,10 +1,12 @@
 package com.trying.developing.firebasetesting;
 
+import java.io.Serializable;
+
 /**
  * Created by developing on 4/3/2018.
  */
 
-public class Tasks {
+public class Tasks implements Serializable {
 
     private String id;
     private String memberEmail;

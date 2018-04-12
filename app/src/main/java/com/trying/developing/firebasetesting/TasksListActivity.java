@@ -1,5 +1,6 @@
 package com.trying.developing.firebasetesting;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -67,6 +68,9 @@ import java.util.List;
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                     //List<HashMap<String, Object>> usersData = (List<HashMap<String, Object>>) dataSnapshot.getValue();
+
+                    //TODO KEY
+                    String key = dataSnapshot.getKey();
                     Tasks data=dataSnapshot.getValue(Tasks.class);
                     Log.i("snap", data.toString());
 
@@ -146,6 +150,18 @@ import java.util.List;
                 public TaskViewHolder(View itemView) {
                     super(itemView);
                     taskName=(TextView) itemView.findViewById(R.id.tasksnameId);
+                    itemView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+
+                            Intent intent = new Intent(TasksListActivity.this,TaskDetailsActivity.class);
+                            Bundle bundle = new Bundle();
+                            Tasks tasks = tasksList.get(getAdapterPosition());
+                            bundle.putSerializable("targetTask",tasks);
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                        }
+                    });
                 }
             }
         }
